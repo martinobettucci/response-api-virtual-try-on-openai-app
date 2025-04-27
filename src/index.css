@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  body {
+    @apply font-sans text-gray-800 bg-ivory-50;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-medium leading-tight;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-6 py-2.5 rounded-md font-medium transition-all duration-300 inline-flex items-center justify-center gap-2;
+  }
+  
+  .btn-primary {
+    @apply bg-navy-500 hover:bg-navy-600 text-white shadow-soft hover:shadow-elegant;
+  }
+  
+  .btn-secondary {
+    @apply bg-ivory-200 hover:bg-ivory-300 text-gray-800 shadow-soft;
+  }
+  
+  .btn-accent {
+    @apply bg-gold-500 hover:bg-gold-600 text-white shadow-soft hover:shadow-elegant;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-navy-300 transition-all duration-300;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-soft p-6 transition-all duration-300 hover:shadow-elegant;
+  }
+
+  .shimmer-bg {
+    @apply bg-gradient-to-r from-transparent via-white to-transparent bg-[length:1000px_100%] animate-shimmer;
+  }
+
+  .particles-container {
+    @apply absolute inset-0 overflow-hidden pointer-events-none opacity-50;
+  }
+}
+
+/* Particle animations */
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  background: linear-gradient(45deg, rgba(255, 195, 0, 0.3), rgba(255, 255, 255, 0.1));
+  animation: float 3s infinite ease-in-out;
+}
